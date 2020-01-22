@@ -1,0 +1,137 @@
+﻿<Window x:Class="MyFirstApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyFirstApp"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="475" 
+        Width="650"
+        Background="CornflowerBlue">
+    <Grid>
+        <StackPanel
+            Orientation="Vertical"
+            HorizontalAlignment="Center"
+            >
+            <Label 
+                Content="Area Calculator" 
+                HorizontalAlignment="Center" 
+                Margin="10"
+                VerticalAlignment="Top"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontFamily="Century Gothic"
+                FontSize="24"/>
+            <Button
+                Content="Help"
+                FontSize="15"
+                Width="60" Click="ButtonHelp_Click" Background="White"/>
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                >
+                <RadioButton
+                Name="Feet"
+                Content="Feet"
+                FontSize="15"
+                Margin="10" Checked="Feet_Checked"/>
+                <RadioButton
+                Name="Meters"
+                Content="Meters"
+                FontSize="15"
+                Margin="10" Checked="Meters_Checked"/>
+            </StackPanel>
+            <TextBlock 
+                Name="textBlockUserFeedback"
+                Width="300"
+                Text=""
+                FontFamily="Verdana"
+                FontSize="15"
+                TextAlignment="Center"
+                Foreground="Red"/>
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Label 
+                    Content="Length"
+                    Margin="20"
+                    FontSize="14"
+                    Name="Length"/>
+                <TextBox
+                    Width="50"
+                    Height="25"
+                    Name="operand1" TextChanged="operand1_TextChanged" Margin="4.5,28,50,27"
+                    />
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Label 
+                    Content="Width"
+                    Margin="20"
+                    FontSize="14"
+                    Name="Width"/>
+                <TextBox
+                    Width="50"
+                    Height="25"
+                    Name="operand2" Margin="4.5,28,50,27" TextChanged="operand2_TextChanged"/>
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal">
+                <Button 
+                    Height="40"
+                    Width="50"
+                    FontSize="25"
+                    Content="+"
+                    Margin="10"
+                    Name="buttonAdd" Click="buttonOperator_Click" Background="White"/>
+                <Button 
+                    Height="40"
+                    Width="50"
+                    FontSize="25" 
+                    Content="-"
+                    Margin="10"
+                    Name="buttonSub" Click="buttonOperator_Click" Background="White"/>
+                <Button 
+                    Height="40"
+                    Width="50"
+                    FontSize="25" 
+                    Content="x"
+                    Margin="10"
+                    Name="buttonMult" Click="buttonOperator_Click" Background="White"/>
+                <Button 
+                    Height="40"
+                    Width="50"
+                    FontSize="25" 
+                    Content="/"
+                    Margin="10"
+                    Name="buttonDiv" Click="buttonOperator_Click" Background="White"/>
+                <Button
+                    Height="40"
+                    Width="50"
+                    FontSize="15"
+                    Content="Clear"
+                    Margin="10"
+                    Name="buttonClear" Background="White" Click="buttonClear_Click"/>
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <TextBox
+                Name="answer"
+                Height="25"
+                Width="100"/>
+                <Label
+                Content="sqft"
+                FontSize="16"
+                Name="Result"/>
+            </StackPanel>
+            <Button
+                Name="Conversion"
+                Content="Convert"
+                Height="25"
+                Width="100" Background="White" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
