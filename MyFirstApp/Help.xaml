@@ -17,12 +17,20 @@
             FontSize="23"
             HorizontalAlignment="Center"
             FontFamily="Century Gothic"/>
-        <TextBlock
-            Text="To calculate the area, choose either feet or meters. Enter your length and width in the text boxes and select an operation. Press the 'clear' button to clear your values."
+            <TextBlock
             TextWrapping="Wrap"
-            FontSize="16"
-            TextAlignment="Center"
-            HorizontalAlignment="Center"/>
+            FontSize="15"
+            TextAlignment="Justify"
+            HorizontalAlignment="Center"
+            Margin="30,0">
+            1) Select your unit and shape.
+            <LineBreak/>
+            2) Enter your length and width.
+            <LineBreak/>
+            3) Press the 'convert' button to convert between feet and meters.
+            <LineBreak/>
+            4) Press the 'clear' button to clear your values.
+            </TextBlock>
         <Button 
             Width="60"
             Height="25"

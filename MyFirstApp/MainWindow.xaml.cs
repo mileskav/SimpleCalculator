@@ -33,35 +33,15 @@ namespace MyFirstApp
             double.TryParse(operand1.Text, out double operand1Num);
             double.TryParse(operand2.Text, out double operand2Num);
 
-            switch (operation)
+            if (Shape.SelectedIndex == 0)
             {
-                case "buttonAdd":
-                    answer.Text = (operand1Num + operand2Num).ToString();
-                    break;
-                case "buttonSub":
-                    answer.Text = (operand1Num - operand2Num).ToString();
-                    break;
-                case "buttonMult":
-                    answer.Text = (operand1Num * operand2Num).ToString();
-                    break;
-                case "buttonDiv":
-                    if (operand2Num == 0)
-                    {
-                        ErrorWindow errorWindow = new ErrorWindow();
-
-                        errorWindow.ShowDialog();
-
-                        operand2.Text = "";
-                        operand2.Focus();
-                    }
-                    else
-                    {
-                        answer.Text = (operand1Num / operand2Num).ToString();
-                    }
-                    break;
-                default:
-                    break;
-            }  
+                answer.Text = (operand1Num * operand2Num).ToString();
+            }
+            else if (Shape.SelectedIndex == 1)
+            {
+                answer.Text = ((operand1Num * operand2Num) / 2).ToString();
+            }
+  
         }
 
         private void ButtonHelp_Click(object sender, RoutedEventArgs e)
@@ -100,7 +80,7 @@ namespace MyFirstApp
             Length.Content = "Length (ft)";
             Width.Content = "Width (ft)";
             Result.Content = "sq ft";
-            Conversion.Content = "Convert to feet";
+            Conversion.Content = "Convert to meters";
         }
 
         private void Meters_Checked(object sender, RoutedEventArgs e)
@@ -108,7 +88,7 @@ namespace MyFirstApp
             Length.Content = "Length (m)";
             Width.Content = "Width (m)";
             Result.Content = "sq m";
-            Conversion.Content = "Convert to meters";
+            Conversion.Content = "Convert to feet";
         }
 
         private void buttonClear_Click(object sender, RoutedEventArgs e)
@@ -120,9 +100,21 @@ namespace MyFirstApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (Feet.IsChecked == true)
+            {
+                double.TryParse(answer.Text, out double toMeters);
+                answer.Text = Convert.ToString(toMeters / 3.281);
+            }
+            else
+            {
+                double.TryParse(answer.Text, out double toFeet);
+                answer.Text = Convert.ToString(toFeet * 3.281);
+            }
         }
 
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Feet.IsChecked = true;
+        }
     }
 }

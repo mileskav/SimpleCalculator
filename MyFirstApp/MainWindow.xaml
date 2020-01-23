@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyFirstApp"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="475" 
-        Width="650"
-        Background="CornflowerBlue">
+        Title="Area Calculator" 
+        Height="400" 
+        Width="600"
+        Background="CornflowerBlue" Loaded="Window_Loaded">
     <Grid>
         <StackPanel
             Orientation="Vertical"
-            HorizontalAlignment="Center"
-            >
+            HorizontalAlignment="Left">
+            <StackPanel
+                Orientation="Vertical"
+                HorizontalAlignment="Center">
             <Label 
                 Content="Area Calculator" 
                 HorizontalAlignment="Center" 
@@ -23,10 +25,12 @@
                 HorizontalContentAlignment="Center"
                 FontFamily="Century Gothic"
                 FontSize="24"/>
-            <Button
-                Content="Help"
-                FontSize="15"
-                Width="60" Click="ButtonHelp_Click" Background="White"/>
+                <ComboBox
+                    Name="Shape">
+                    <ComboBoxItem IsSelected="True">Rectangle</ComboBoxItem>
+                    <ComboBoxItem>Triangle</ComboBoxItem>
+               </ComboBox>
+            </StackPanel>
             <StackPanel
                 Orientation="Horizontal"
                 HorizontalAlignment="Center"
@@ -50,18 +54,20 @@
                 FontSize="15"
                 TextAlignment="Center"
                 Foreground="Red"/>
+            
             <StackPanel
                 Orientation="Horizontal"
                 HorizontalAlignment="Center">
                 <Label 
                     Content="Length"
-                    Margin="20"
-                    FontSize="14"
+                    Margin="20,0"
+                    FontSize="16"
                     Name="Length"/>
                 <TextBox
                     Width="50"
                     Height="25"
-                    Name="operand1" TextChanged="operand1_TextChanged" Margin="4.5,28,50,27"
+                    Name="operand1"
+                    Margin="4.5,5,50,27" TextChanged="operand1_TextChanged" 
                     />
             </StackPanel>
             <StackPanel
@@ -69,51 +75,19 @@
                 HorizontalAlignment="Center">
                 <Label 
                     Content="Width"
-                    Margin="20"
-                    FontSize="14"
+                    Margin="20,0"
+                    FontSize="16"
                     Name="Width"/>
                 <TextBox
                     Width="50"
                     Height="25"
-                    Name="operand2" Margin="4.5,28,50,27" TextChanged="operand2_TextChanged"/>
+                    Name="operand2" 
+                    Margin="4.5,5,50,27" TextChanged="operand2_TextChanged"/>
             </StackPanel>
             <StackPanel
-                Orientation="Horizontal">
-                <Button 
-                    Height="40"
-                    Width="50"
-                    FontSize="25"
-                    Content="+"
-                    Margin="10"
-                    Name="buttonAdd" Click="buttonOperator_Click" Background="White"/>
-                <Button 
-                    Height="40"
-                    Width="50"
-                    FontSize="25" 
-                    Content="-"
-                    Margin="10"
-                    Name="buttonSub" Click="buttonOperator_Click" Background="White"/>
-                <Button 
-                    Height="40"
-                    Width="50"
-                    FontSize="25" 
-                    Content="x"
-                    Margin="10"
-                    Name="buttonMult" Click="buttonOperator_Click" Background="White"/>
-                <Button 
-                    Height="40"
-                    Width="50"
-                    FontSize="25" 
-                    Content="/"
-                    Margin="10"
-                    Name="buttonDiv" Click="buttonOperator_Click" Background="White"/>
-                <Button
-                    Height="40"
-                    Width="50"
-                    FontSize="15"
-                    Content="Clear"
-                    Margin="10"
-                    Name="buttonClear" Background="White" Click="buttonClear_Click"/>
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                
             </StackPanel>
             <StackPanel
                 Orientation="Horizontal"
@@ -123,15 +97,52 @@
                 Height="25"
                 Width="100"/>
                 <Label
-                Content="sqft"
+                Content=""
                 FontSize="16"
                 Name="Result"/>
             </StackPanel>
+            
+        </StackPanel>
+        <StackPanel
+            Orientation="Vertical"
+            HorizontalAlignment="Right"
+            Margin="60,50">
+            <Button 
+                    Height="25"
+                    Width="150"
+                    FontSize="15" 
+                    Content="Calculate"
+                    Name="buttonMult" Click="buttonOperator_Click" Background="White"/>
             <Button
                 Name="Conversion"
+                FontSize="15"
                 Content="Convert"
                 Height="25"
-                Width="100" Background="White" Click="Button_Click"/>
+                Width="150" 
+                Background="White" Click="Button_Click"/>
+            <Button
+                Height="25"
+                Width="150"
+                FontSize="15"
+                Content="Clear"
+                Name="buttonClear" 
+                Background="White" Click="buttonClear_Click"/>
+           <Button
+                Height="25"
+                Content="Help"
+                FontSize="15"
+                Width="150" Click="ButtonHelp_Click" 
+                Background="White"/>
+
+            <Image
+            Name="Diagram"
+            Source="https://math.la.asu.edu/~checkman/F2003/113/rectangle.jpg"
+            Height="150"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="10" 
+            />
         </StackPanel>
+        
     </Grid>
 </Window>
