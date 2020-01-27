@@ -92,6 +92,7 @@ namespace MyFirstApp
         {
             if (Feet.IsChecked == true)
             {
+                // shows conversion textbox and changes label
                 Converted.Content = "sq m";
                 convertValue.Visibility = Visibility.Visible;
 
@@ -101,6 +102,7 @@ namespace MyFirstApp
             }
             else
             {
+                // shows conversion textbox and changes label
                 Converted.Content = "sq ft";
                 convertValue.Visibility = Visibility.Visible;
 

@@ -7,7 +7,7 @@
         Title="Area Calculator" 
         Height="450" 
         Width="550"
-        Background="CornflowerBlue" Loaded="Window_Loaded">
+        Background="CornflowerBlue" Loaded="Window_Loaded" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel
             Orientation="Vertical"
