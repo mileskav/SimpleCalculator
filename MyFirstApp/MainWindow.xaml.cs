@@ -41,7 +41,6 @@ namespace MyFirstApp
             {
                 answer.Text = ((operand1Num * operand2Num) / 2).ToString();
             }
-  
         }
 
         private void ButtonHelp_Click(object sender, RoutedEventArgs e)
@@ -103,20 +102,20 @@ namespace MyFirstApp
         {
             if (Feet.IsChecked == true)
             {
-                convertValue.Visibility = Visibility.Visible;
                 Converted.Content = "sq m";
+                convertValue.Visibility = Visibility.Visible;
+
                 double.TryParse(answer.Text, out double toMeters);
                 convertValue.Text = Convert.ToString(toMeters / 3.281);
             }
             else
             {
+                Converted.Content = "sq ft";
                 convertValue.Visibility = Visibility.Visible;
 
-                Converted.Content = "sq ft";
                 double.TryParse(answer.Text, out double toFeet);
                 convertValue.Text = Convert.ToString(toFeet * 3.281);
             }
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
