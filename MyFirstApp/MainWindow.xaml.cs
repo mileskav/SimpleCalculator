@@ -96,25 +96,37 @@ namespace MyFirstApp
             operand1.Text = "";
             operand2.Text = "";
             answer.Text = "";
+            convertValue.Text = "";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (Feet.IsChecked == true)
             {
+                convertValue.Visibility = Visibility.Visible;
+                Converted.Content = "sq m";
                 double.TryParse(answer.Text, out double toMeters);
-                answer.Text = Convert.ToString(toMeters / 3.281);
+                convertValue.Text = Convert.ToString(toMeters / 3.281);
             }
             else
             {
+                convertValue.Visibility = Visibility.Visible;
+
+                Converted.Content = "sq ft";
                 double.TryParse(answer.Text, out double toFeet);
-                answer.Text = Convert.ToString(toFeet * 3.281);
+                convertValue.Text = Convert.ToString(toFeet * 3.281);
             }
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Feet.IsChecked = true;
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

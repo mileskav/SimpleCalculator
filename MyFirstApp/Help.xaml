@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MyFirstApp"
         mc:Ignorable="d"
         Title="Help" 
-        Height="230" 
+        Height="250" 
         Width="400"
         Background="CornflowerBlue">
     <Grid>
@@ -30,12 +30,14 @@
             3) Press the 'convert' button to convert between feet and meters.
             <LineBreak/>
             4) Press the 'clear' button to clear your values.
+            <LineBreak/>
+            5) Press the 'close' button to exit.
             </TextBlock>
         <Button 
             Width="60"
             Height="25"
             Content="Close" 
-            Margin="20"
+            Margin="10"
             FontSize="15" Click="Button_Click"/>
     </StackPanel>
     </Grid>
