@@ -44,6 +44,7 @@ namespace MyFirstApp
         {
             if (!double.TryParse(operand1.Text, out double number))
             {
+                textBlockUserFeedback.Visibility = Visibility.Visible;
                 textBlockUserFeedback.Text = "Operands must be numbers";
             }
             else
@@ -56,6 +57,7 @@ namespace MyFirstApp
         {
             if (!double.TryParse(operand2.Text, out double number))
             {
+                textBlockUserFeedback.Visibility = Visibility.Visible;
                 textBlockUserFeedback.Text = "Operands must be numbers";
             }
             else
@@ -82,12 +84,16 @@ namespace MyFirstApp
 
         private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
+            // clear values
             operand1.Text = "";
             operand2.Text = "";
             answer.Text = "";
             convertValue.Text = "";
+
+            // hide elements
             convertValue.Visibility = Visibility.Hidden;
             Converted.Visibility = Visibility.Hidden;
+            textBlockUserFeedback.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
