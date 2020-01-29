@@ -86,6 +86,8 @@ namespace MyFirstApp
             operand2.Text = "";
             answer.Text = "";
             convertValue.Text = "";
+            convertValue.Visibility = Visibility.Hidden;
+            Converted.Visibility = Visibility.Hidden;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
